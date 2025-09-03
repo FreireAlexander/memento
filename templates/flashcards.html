@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCards</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h3>FlashCards</h3>
+    {% for card in flashcards %}
+        <article class="flashcard">
+            <h3>{{ card.question }}</h2>
+            <p>{{ card.answer }}</p>
+            <p>{{ card.id }}</p>
+        </article>
+    {% endfor %}
+</body>
+</html>
