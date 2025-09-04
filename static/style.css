@@ -9,9 +9,17 @@ body{
 }
 
 article{
-    margin: 2rem;
-    padding: 2rem;
+    margin: 4px;
+    padding: 4px;
     border: 1px solid #f3f5f7;
     border-radius: 8px;
     background-color: #2e2f2e;
+}
+
+h3{
+    font-size: 1.4rem;
+}
+
+p{
+    font-size: 1.2rem;
 }

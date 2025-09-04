@@ -1,2 +1,2 @@
 from .flashcards import FlashCard
-from .flashcards import db
+from ._config import db
