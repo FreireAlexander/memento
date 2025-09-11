@@ -16,6 +16,16 @@ class FlashCard(db.Model):
     id = Column(String, primary_key=True,  default=lambda: str(uuid4().hex))
     front = Column(Text, nullable=False)
     back = Column(Text, nullable=False)
-    validatio = Column(Text, nullable=False)
+    validation = Column(Text, nullable=False)
     fields = Column(JSON, nullable=False)
     """
+
+class NewFlashCard(db.Model):
+    id = Column(String, primary_key=True,  default=lambda: str(uuid4().hex))
+    front = Column(Text, nullable=False)
+    back = Column(Text, nullable=False)
+    """
+    validation = Column(Text, nullable=False)
+    fields = Column(JSON, nullable=False)
+    """
+    

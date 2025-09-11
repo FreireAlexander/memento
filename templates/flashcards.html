@@ -10,8 +10,8 @@
     <h3>FlashCards</h3>
     {% for card in flashcards %}
         <article class="flashcard">
-            <h3>{{ card.question }}</h2>
-            <p>{{ card.answer }}</p>
+            <div>{{ card.front | safe }}</div>
+            <div>{{ card.back | safe }}</div>
             <p>{{ card.id }}</p>
         </article>
     {% endfor %}

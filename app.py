@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from config import Config
-from models import db, FlashCard
+from models import db, FlashCard, NewFlashCard
 from uuid import uuid4
 
 app = Flask(__name__)
@@ -14,7 +14,12 @@ with app.app_context():
         question="¿Cuál es la capital de Francia?",
         answer="París"
         )
+        new_card = NewFlashCard(
+            front = '<h1>¿Cuál es la capital de Francia?</h1>',
+            back = '<p style="background-color: red;">París</p>'
+            )
         db.session.add(card)
+        db.session.add(new_card)
         db.session.commit()
 
 @app.route('/', methods=['GET', 'POST'])
@@ -30,8 +35,8 @@ def home():
 
 @app.route('/flashcards', methods=['GET', 'POST'])
 def flashcards():
-    if FlashCard.query.all():
-        flashcards = FlashCard.query.all()
+    if NewFlashCard.query.all():
+        flashcards = NewFlashCard.query.all()
     else:
         flashcards = []
     return render_template('flashcards.html', flashcards=flashcards)
