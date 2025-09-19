@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desde Home Folder</title>
+    <title>{% block title %}Memento | {% endblock %}</title>
 </head>
 <style>
     *{
@@ -59,7 +59,7 @@
     }
 </style>
 <body>
-    <h1>Memento</h1>
-    <p>Repasa activamente todos los dias para preservar el conocimiento</p>
+    {%block body %}{%endblock%}
+    {%block scripts %}{%endblock%}
 </body>
 </html>

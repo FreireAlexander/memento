@@ -1,12 +1,16 @@
+{% extends 'base/base.html'%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {%block title %}{{ super() }} Home {%endblock%}
 </head>
 <body>
-    <h1>Memento</h1>
+    {%block body %}
+    <h1>Bienvenido </h1>
     <p>Repasa activamente todos los dias para preservar el conocimiento</p>
+    {%endblock%}
 </body>
 </html>
