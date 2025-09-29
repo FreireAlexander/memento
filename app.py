@@ -22,8 +22,14 @@ db.init_app(app)
         db.session.add(new_card)
         db.session.commit()"""
 
+
+@app.route('/home/<user>', methods=['GET', 'POST'])
+def welcomePage(user):
+    return render_template('endpoint/user_home.html', user=user)
+
+
 @app.route('/', methods=['GET', 'POST'])
-def home():
+def landingPage():
     if request.method == 'POST':
         json = {
             "title": "Titulo de apoyo",

@@ -1,0 +1,25 @@
+{% extends 'base/base.html'%}
+
+{%block title %} {{ super() }} WELCOME {%endblock%}
+{%block style %}
+{{ super() }}
+<style>
+    h2{
+        font-size: 1.8rem;
+    }
+</style>
+{%endblock%}
+{%block body %}
+<h1>Welcome {{user}}</h1>
+<section>
+    <h2>Decks</h2>
+    <memento-deck
+    img="../media/cover_pic.jpg"
+        title="El mejor blog de todos los tiempos"
+        description="Esto sobreescribvira el parrafo aquel">
+    </memento-deck>
+</section>
+{%endblock%}
+{%block scripts %}
+<script type="module" src="{{ url_for('static', filename='js/components/components.js')}}"></script>
+{%endblock%}
